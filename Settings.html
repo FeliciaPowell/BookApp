@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings Page</title>
+    <link rel="stylesheet" href="Settings.css">
+    <script src="https://kit.fontawesome.com/a582029dd8.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>Settings</h1>
+    <div class="container">
+        <div class="leftbox">
+            <nav>
+                <!-- Account -->
+                <a onclick="tabs(0)" 
+                class="tab active">
+                <i class="fa-solid fa-key"></i>
+                </a>
+                <!-- Profile -->                
+                <a onclick="tabs(1)" 
+                class="tab">
+                <i class="fa-solid fa-user"></i>
+                </a>
+                <!-- Quests and Side Quests -->
+                <a onclick="tabs(2)" 
+                class="tab">
+                <i class="fa-solid fa-briefcase"></i>
+                </a>
+                <!-- Shelves -->
+                <a onclick="tabs(3)" 
+                class="tab">
+                <i class="fa-solid fa-book"></i>
+                </a>
+                <!-- FAQs -->
+                <a onclick="tabs(4)" 
+                class="tab">
+                <i class="fa-regular fa-circle-question"></i>
+                </a>
+            </nav>
+        </div>
+        <div class="rightbox">
+            <!-- Account Settings -->
+            <div class="account tabShow">
+                <h2>Account</h2>
+                <h3>Username</h3>
+                <input type="text" 
+                class="input" value="Jane Doe">
+                <h3>Email</h3>
+                <input type="text" 
+                class="input" value="Janedoe@gmail.com">
+                <h3>Password</h3>
+                <input type="password" 
+                class="input" value="whoami">
+                <h3>Pronouns</h3>
+                <label for="pronouns"></label>
+                <select name="pronouns" id="pronouns">
+                <optgroup label="Preferred Pronouns">
+                    <option value="nonbinary">They/Them</option>
+                    <option value="female">She/Her</option>
+                    <option value="nb_female">She/They</option>
+                    <option value="male">He/Him</option>
+                    <option value="nb_male">He/They</option>
+                    <option value="no_response">Prefer Not To Answer</option>
+                </optgroup>
+                </select>
+                <h3>Birthday</h3>
+                <input type="text" 
+                class="input" value="May 2, 2000">
+                <br></br>
+                <input type="checkbox" id="hidebirthday" name="hidebirthday" value="birthday">
+                <label for="hidebirthday">Hide Birthday</label>
+                <br></br>
+                <button class="btn">Update</button>
+            </div>
+            <!-- Profile Settings -->
+            <div class="profile tabShow">
+                <h2>Profile</h2>
+                <h3>Bio</h3>
+                <input type="text" 
+                class="input" value="bio">
+                <br></br>
+                <button class="btn">Change Background</button>
+                <br></br>
+                <button class="btn">Change Picture</button>
+                <br></br>
+                <button class="btn">or select an avatar</button>
+                <br></br>
+                <input type="checkbox" id="hidegold" name="hidegold" value="gold">
+                <label for="hidegold"> Hide Awarded Gold</label>
+                <br>
+                <input type="checkbox" id="hidecompletequests" name="hidecompletequests" value="completequests">
+                <label for="hidecompletequests"> Hide Completed Quests</label>
+                <br>
+                <input type="checkbox" id="hideshelves" name="hideshelves" value="shelves">
+                <label for="hideshelves"> Hide Bookshelves</label>
+                <br></br>
+                <button class="btn">Update</button>
+            </div>
+            <!-- Quests Settings -->
+            <div class="quests tabShow">
+                <h2>Quests and Side Quests</h2>
+                <input type="checkbox" id="randomgenre" name="randomgenre" value="genregen">
+                <label for="randomgenre"> Turn off the Random Genre Generator</label>
+                <br></br>
+                <input type="checkbox" id="onlygenrequests" name="onlygenrequests" value="genrequests">
+                <label for="onlygenrequests"> Only have quests based on Genres</label>
+                <br></br>
+                <input type="checkbox" id="onlylengthquests" name="onlylengthquests" value="lengthquests">
+                <label for="onlylengthquests"> Only have quests based off length of books</label>
+                <br></br>
+                <button class="btn">Update</button>
+            </div>
+            <!-- Shelves Settings -->
+            <div class="shelves tabShow">
+                <h2>Shelves</h2>
+                <input type="checkbox" id="hidespoilers" name="hidespoilers" value="spoilers">
+                <label for="hidespoilers"> Hide Spoilers</label>
+                <br></br>
+                <input type="checkbox" id="hidegenres" name="hidegenres" value="genre">
+                <label for="hidegenres"> Hide Genres</label>
+                <br></br>
+                <input type="checkbox" id="hidetags" name="hidetags" value="tags">
+                <label for="hidetags"> Hide Tags</label>
+                <br></br>
+                <button class="btn">Update</button>
+            </div>
+            <!-- FAQ -->
+            <div class="faq tabShow">
+                <h2>FAQs</h2>
+                <h3>Question</h3>
+                <h3>Answer</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tabBtn = document.querySelectorAll(".tabShow");
+        const tab = document.querySelectorAll(".tabShow");
+
+        function tabs(panelIndex) {
+            tab.forEach(function(node) {
+                node.style.display = "none";
+            });
+            
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+    </script>
+    <script>
+        $(".tab").click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+    </script>
+</body>
+</html>

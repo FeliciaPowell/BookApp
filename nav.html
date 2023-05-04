@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <script src="https://kit.fontawesome.com/a582029dd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"> <i class="fa-solid fa-book-open" style="color: #240040;"></i>
+            My Bookish App</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="">Profile</a></li>
+                <div class="dropdown">
+                    <button class="dropBtn">Shelves
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="">All</a>
+                        <a href="">Read</a>
+                        <a href="">To Be Read</a>
+                        <a href="">Currently Reading</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropBtn">Quests
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="">My Quests</a>
+                        <a href="">Quest Board</a>
+                        <a href="">Roll Dice</a>
+                    </div>
+                </div>
+                <li><a href="">Browse</a></li>
+                <div class="dropdown">
+                    <button class="dropBtn">Extras
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="">Settings</a>
+                    </div>
+                </div>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                    <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+                </span>
+            </div>
+        </div>
+        <div class="searchBox">
+            <input type="text" placeholder="Search Books...">
+        </div>
+    </header>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        let searchBtn = document.querySelector('.searchBtn');
+        let closeBtn = document.querySelector('.closeBtn');
+        let searchBox = document.querySelector('.searchBox')
+        let dropBtn = document.querySelector('.dropBtn')
+
+        searchBtn.onclick = function() {
+            searchBox.classList.add('active');
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('active');
+            dropBtn.classList.add('active');
+        }
+
+        closeBtn.onclick = function() {
+            searchBox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
